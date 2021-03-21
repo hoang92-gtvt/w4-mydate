@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng Object myDate</title>
+</head>
+<body>
+    <script>
+        function myDate(day, month, year){
+            this.day = day;
+            this.month=month;
+            this.year= year;
+
+            this.getMyDate = function (){
+                return this.day +'/' +this.month+'/' +this.year
+            }
+            this.setMyDate = function(day2, month2, year2){
+                this.day=day2;
+                this.month=month2;
+                this.year=year2;
+                return this.day +'/'+ this.month +'/'+ this.year
+            }
+           this.getMyDate2 =function (){
+                return `${this.day} /${this.month}/ ${this.year}`;
+
+            }
+        }
+        myDate.prototype.toString= function(){
+            return ""+ this.day+ this.month + this.year
+
+        }
+
+
+
+        var homnay= new myDate(21,3,2021);
+        console.log(homnay.getMyDate());
+        console.log(homnay.toString()) ;
+        console.log(homnay.setMyDate(23,3,2021)) ;
+        console.log(homnay.toString()) ;
+        console.log(homnay.getMyDate2());
+
+    </script>
+
+</body>
+</html>
